@@ -6,6 +6,9 @@ namespace PokemonGame
     {
         static void Main(string[] args)
         {
+            StartScreenMenu start = new StartScreenMenu();
+            start.StartLogo();
+
             // Create a trainers
             Trainer trainerJack = new Trainer();
             Trainer trainerJen = new Trainer();
@@ -40,6 +43,67 @@ namespace PokemonGame
             {
                 trainerJack.Release(trainerJack.PokemonCollection[i]);
             }
+
+
+            Console.WriteLine("--------------------------------");
+
+
+            WaterPokemon wartortle = new WaterPokemon();
+            wartortle.Name = "Wartortle";
+            Console.WriteLine(wartortle.Name);
+            trainerJack.Catch(wartortle);
+
+
+            Console.WriteLine("-----------------------------");
+
+            FirePokemon charmeleon = new FirePokemon();
+            charmeleon.Name = "Charmeleon";
+            trainerJack.Catch(charmeleon);
+            charmeleon.Ember();
+
+            foreach (Pokemon pokemon in trainerJack.PokemonCollection)
+            {   
+                if (pokemon is FirePokemon fire) 
+                { 
+                    fire.Ember();
+                }
+                else if (pokemon is WaterPokemon water) 
+                { 
+                    water.Bubble();
+                }
+            }
+
+            MagmaPokemon magmar = new MagmaPokemon();
+            magmar.Name = "Magmar";
+
+            Console.WriteLine(magmar.Name);
+            Console.WriteLine(magmar.Type);
+
+            trainerJack.Catch(magmar);
+
+            Console.WriteLine("----------------------------");
+
+
+            BugPokemon combee = new BugPokemon();
+            combee.Name = "Combee";
+            trainerJack.Catch(combee);
+
+            RockPokemon shieldon = new RockPokemon();
+            shieldon.Name = "Shieldon";
+            trainerJack.Catch(shieldon);
+
+            foreach (Pokemon pokemon in trainerJack.PokemonCollection)
+            {
+                if (pokemon is BugPokemon bug) 
+                { 
+                    bug.BugBite();
+                }
+                else if (pokemon is RockPokemon rock) 
+                { 
+                    rock.RockThrow();
+                }
+            }
+
         }
     }
 }

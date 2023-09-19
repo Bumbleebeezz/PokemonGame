@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace PokemonGame
 {
     public class Pokemon
     {
+        public Pokemon() { }
         // Every pokemon starts with 100 health points
         private int _healthPoints = 100;
 
@@ -47,5 +49,7 @@ namespace PokemonGame
             target.HealthPoints -= 10;
             Console.WriteLine("Attacks " + target.Name);
         }
+
+        
     }
 }
