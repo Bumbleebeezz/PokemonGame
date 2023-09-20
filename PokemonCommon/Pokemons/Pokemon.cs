@@ -8,7 +8,7 @@ using PokemonCommon.Enums;
 
 namespace PokemonCommon.Pokemons
 {
-    public abstract class Pokemon
+    public class Pokemon
     {
         public Pokemon() { }
         // Every pokemon starts with 100 health points
@@ -47,6 +47,5 @@ namespace PokemonCommon.Pokemons
 
         public virtual void Attack(Pokemon target) { }
 
-        public abstract void Eat(string food);
     }
 }

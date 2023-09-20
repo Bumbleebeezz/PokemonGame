@@ -16,20 +16,19 @@ namespace PokemonGame
 
             Console.WriteLine("-----------------------------");
 
-            WaterPokemon wartortle = new WaterPokemon();
+            Pokemon wartortle = new Pokemon();
             wartortle.Name = "Wartortle";
 
 
             Console.WriteLine("-----------------------------");
 
-            FirePokemon charmeleon = new FirePokemon();
+            Pokemon charmeleon = new Pokemon();
             charmeleon.Name = "Charmeleon";
 
             Console.WriteLine("-----------------------------");
 
-            MagmaPokemon magmar = new MagmaPokemon();
+            Pokemon magmar = new Pokemon();
             magmar.Name = "Magmar";
-            magmar.Eat("apple");
 
             Console.WriteLine("----------------------------");
         }
