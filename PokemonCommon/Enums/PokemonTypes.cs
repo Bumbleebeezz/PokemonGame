@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PokemonGame
+﻿namespace PokemonCommon.Enums
 {
     public enum PokemonTypes
     {
@@ -13,7 +7,7 @@ namespace PokemonGame
         Dragon,
         Electric,
         Normal,
-        Fairy, 
+        Fairy,
         Fighting,
         Fire,
         Flying,
@@ -24,7 +18,7 @@ namespace PokemonGame
         Poison,
         Psychic,
         Rock,
-        Steel, 
+        Steel,
         Water
     }
 }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using PokemonCommon.Enums;
 
-namespace PokemonGame
+namespace PokemonCommon.Pokemons
 {
-    public class Pokemon
+    public abstract class Pokemon
     {
         public Pokemon() { }
         // Every pokemon starts with 100 health points
@@ -44,12 +45,8 @@ namespace PokemonGame
             _type = type;
         }
 
-        public static void Attack(Pokemon target)
-        {
-            target.HealthPoints -= 10;
-            Console.WriteLine("Attacks " + target.Name);
-        }
+        public virtual void Attack(Pokemon target) { }
 
-        
+        public abstract void Eat(string food);
     }
 }
