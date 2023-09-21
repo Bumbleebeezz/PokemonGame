@@ -2,7 +2,7 @@
 using PokemonCommon.Pokemons;
 using PokemonCommon.Pokemons.Attacks;
 
-namespace PokemonGame;
+namespace PokemonCommon;
 
 public static class BattleEngine
 {
@@ -10,7 +10,6 @@ public static class BattleEngine
     {
         Effectiveness effectiveness = CheckEffectiveness(target.Types.ToArray(), attack.Type);
         double modifier = (double)effectiveness / 100.0;
-
         target.HealthPoints = target.HealthPoints - attack.Damage * modifier;
     }
 

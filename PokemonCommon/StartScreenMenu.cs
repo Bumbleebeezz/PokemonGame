@@ -1,14 +1,16 @@
-﻿namespace PokemonGame
+﻿namespace PokemonCommon
 {
-    class StartScreenMenu
+    public class StartScreenMenu
     {
-        public void StartLogo()
+        public static void  StartLogo()
         {
             Console.WriteLine(" ###    ##   #  #  ####  #   #   ##   #  #");
             Console.WriteLine(" #  #  #  #  # #   #     ## ##  #  #  ## #");
             Console.WriteLine(" ###   #  #  ##    ###   # # #  #  #  # ##");
             Console.WriteLine(" #     #  #  # #   #     #   #  #  #  #  #");
             Console.WriteLine(" #      ##   #  #  ####  #   #   ##   #  #");
+
+            Console.WriteLine("-----------------------------------------------");
         }
     }
 }

@@ -13,7 +13,16 @@ namespace PokemonCommon.Pokemons
     {
         public Pokemon() { }
         // Every pokemon starts with 100 health points 
+
         private double _healthPoints = 100;
+
+        private int _xp = 0;
+
+        public int XP
+        {
+            get { return _xp;}
+            set { _xp = value; }
+        }
 
         // Get och change health points
         public double HealthPoints

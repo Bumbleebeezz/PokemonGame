@@ -10,7 +10,7 @@ public abstract class Attack
 
     public PokemonTypes Type { get; }
 
-    protected Attack(int damage, string name, PokemonTypes type)
+    protected Attack(double damage, string name, PokemonTypes type)
     {
         Damage = damage;
         Name = name;
