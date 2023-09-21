@@ -4,7 +4,14 @@ namespace PokemonCommon.Trainers
 {
     public class Trainer
     {
-        public List<Pokemon> PokemonCollection { get; set; } // = new List<Pokemon>();
+        public string Name { get; set; }
+
+         public List<Pokemon> PokemonCollection { get; set; } // = new List<Pokemon>();
+
+        public Trainer(string name)
+        {
+            Name = name;
+        }
 
         public Trainer()
         {

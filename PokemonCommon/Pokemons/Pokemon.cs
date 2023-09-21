@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using PokemonCommon.Enums;
+using PokemonCommon.Pokemons.Attacks;
 
 namespace PokemonCommon.Pokemons
 {
     public class Pokemon
     {
         public Pokemon() { }
-        // Every pokemon starts with 100 health points
+        // Every pokemon starts with 100 health points 
         private int _healthPoints = 100;
 
         // Get och change health points
@@ -38,6 +39,8 @@ namespace PokemonCommon.Pokemons
             set { _type = value; }
         }
 
+        public Attack[] Attacks { get;} = new Attack[4];
+
         // Name pokemon and set pokemon type
         public Pokemon(string name, PokemonTypes type)
         {
@@ -47,5 +50,17 @@ namespace PokemonCommon.Pokemons
 
         public virtual void Attack(Pokemon target) { }
 
+        public void LearnAttack(Attack attack, int attackIndex)
+        {
+            if (attackIndex >  3)
+            {
+               return;  
+            }
+            if (attack is null)
+            {
+                return;
+            }
+            Attacks[attackIndex] = attack;
+        }
     }
 }

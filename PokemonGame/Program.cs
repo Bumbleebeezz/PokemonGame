@@ -1,4 +1,6 @@
-﻿using PokemonCommon.Pokemons;
+﻿using PokemonCommon.Enums;
+using PokemonCommon.Pokemons;
+using PokemonCommon.Pokemons.Attacks;
 using PokemonCommon.Trainers;
 
 namespace PokemonGame
@@ -7,31 +9,21 @@ namespace PokemonGame
     {
         static void Main(string[] args)
         {
-            StartScreenMenu start = new StartScreenMenu();
-            start.StartLogo();
-
-            // Create a trainers
             Trainer trainerJack = new Trainer();
-            Trainer trainerJen = new Trainer();
 
-            Console.WriteLine("-----------------------------");
+            Pokemon piplup = new Pokemon("Piplup", PokemonTypes.Water);
 
-            Pokemon wartortle = new Pokemon();
-            wartortle.Name = "Wartortle";
+            Tackle tackle = new Tackle();
+           piplup.LearnAttack(tackle,0);
 
-
-            Console.WriteLine("-----------------------------");
-
-            Pokemon charmeleon = new Pokemon();
-            charmeleon.Name = "Charmeleon";
-
-            Console.WriteLine("-----------------------------");
-
-            Pokemon magmar = new Pokemon();
-            magmar.Name = "Magmar";
-
-            Console.WriteLine("----------------------------");
+           foreach (var piplupAttack in piplup.Attacks)
+           {
+               if (piplupAttack == null)
+               {
+                   continue;
+               }
+               Console.WriteLine(piplupAttack.Name);
+           }
         }
-       
     }
 }
