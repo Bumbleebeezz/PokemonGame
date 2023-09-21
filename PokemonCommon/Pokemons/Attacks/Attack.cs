@@ -4,7 +4,7 @@ namespace PokemonCommon.Pokemons.Attacks;
 
 public abstract class Attack
 {
-    public int Damage { get; }
+    public double Damage { get; }
 
     public string Name { get; }   
 

@@ -13,10 +13,10 @@ namespace PokemonCommon.Pokemons
     {
         public Pokemon() { }
         // Every pokemon starts with 100 health points 
-        private int _healthPoints = 100;
+        private double _healthPoints = 100;
 
         // Get och change health points
-        public int HealthPoints
+        public double HealthPoints
         {
             get { return _healthPoints; }
             set { _healthPoints = value; }
@@ -31,21 +31,21 @@ namespace PokemonCommon.Pokemons
         }
 
         // Get and set pokemon type
-        private PokemonTypes _type;
+        private List<PokemonTypes> _types = new List<PokemonTypes>();
 
-        public PokemonTypes Type
+        public List<PokemonTypes> Types
         {
-            get { return _type; }
-            set { _type = value; }
+            get { return _types; }
+            set { _types = value; }
         }
 
         public Attack[] Attacks { get;} = new Attack[4];
 
         // Name pokemon and set pokemon type
-        public Pokemon(string name, PokemonTypes type)
+        public Pokemon(string name, params PokemonTypes[] types)
         {
             _name = name;
-            _type = type;
+            _types = types.ToList();
         }
 
         public virtual void Attack(Pokemon target) { }
