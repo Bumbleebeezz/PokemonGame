@@ -6,11 +6,13 @@ namespace PokemonCommon;
 
 public static class BattleEngine
 {
-    public static void MakeAttack(Pokemon target, Attack attack)
+    public static void MakeAttack(Pokemon target, Attack attack, string attacker)
     {
         Effectiveness effectiveness = CheckEffectiveness(target.Types.ToArray(), attack.Type);
         double modifier = (double)effectiveness / 100.0;
         target.HealthPoints = target.HealthPoints - attack.Damage * modifier;
+
+        BattleUi.DisplayAttackEffectiveness(effectiveness, attack.Name, attacker);
     }
 
   

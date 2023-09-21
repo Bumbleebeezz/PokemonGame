@@ -36,11 +36,11 @@ namespace PokemonGame
            while (isAlive)
            {
                 Console.WriteLine("Piplup hp:" + piplup.HealthPoints);
-                BattleEngine. MakeAttack(piplup, charmander.Attacks[0]);
+                BattleEngine. MakeAttack(piplup, charmander.Attacks[0], charmander.Name);
                 Console.WriteLine("Piplip hp:" + piplup.HealthPoints);
 
                 Console.WriteLine("Charmander hp:" + charmander.HealthPoints);
-                BattleEngine.MakeAttack(charmander, piplup.Attacks[1]);
+                BattleEngine.MakeAttack(charmander,  piplup.Attacks[1], piplup.Name);
                 Console.WriteLine("Charmander hp:" + charmander.HealthPoints);
 
                 isAlive = HealthPointCheck.HealthPointChecker(piplup, charmander);
