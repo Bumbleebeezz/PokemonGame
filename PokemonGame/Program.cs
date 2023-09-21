@@ -35,6 +35,7 @@ namespace PokemonGame
            bool isAlive = true;
            while (isAlive)
            {
+                
                 Console.WriteLine("Piplup hp:" + piplup.HealthPoints);
                 BattleEngine. MakeAttack(piplup, charmander.Attacks[0], charmander.Name);
                 Console.WriteLine("Piplip hp:" + piplup.HealthPoints);
