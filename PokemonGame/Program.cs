@@ -19,33 +19,46 @@ namespace PokemonGame
             Pokemon piplup = new Pokemon("Piplup", PokemonTypes.Water);
             Pokemon charmander = new Pokemon("Charmander", PokemonTypes.Fire);
 
-            Tackle tackle = new Tackle();
-            AquaJet aquaJet = new AquaJet();
+           Tackle tackle = new Tackle();
+           AquaJet aquaJet = new AquaJet();
+           IceFang iceFang = new IceFang();
+           Aeroblast aeroblast = new Aeroblast();
            piplup.LearnAttack(tackle,0);
-           piplup.LearnAttack(aquaJet, attackIndex:1);
+           piplup.LearnAttack(aquaJet,1);
+           piplup.LearnAttack(iceFang,2);
+           piplup.LearnAttack(aeroblast,3);
+
 
            Ember ember = new Ember();
            DragonRush dragonRush = new DragonRush();
+           HyperBeam hyperBeam = new HyperBeam();
+           CloseCombat closeCombat = new CloseCombat();
            charmander.LearnAttack(ember,0);
            charmander.LearnAttack(dragonRush,1);
+           charmander.LearnAttack(hyperBeam, 2);
+           charmander.LearnAttack(closeCombat,3);
 
-           Console.WriteLine("Piplup xp: " + piplup.XP);
-           Console.WriteLine("Charmander xp: " + charmander.XP);
 
            bool isAlive = true;
            while (isAlive)
            {
-                
-                Console.WriteLine("Piplup hp:" + piplup.HealthPoints);
-                BattleEngine. MakeAttack(piplup, charmander.Attacks[0], charmander.Name);
-                Console.WriteLine("Piplip hp:" + piplup.HealthPoints);
+               PokemonCommon.AsciiArt.PiplupArt.Name();
+               foreach (var attack in piplup.Attacks)
+               {
+                   Console.WriteLine(attack.Name);
+               }
+               var piplupAttack = Console.ReadLine();
+               isAlive = HealthPointCheck.HealthPointChecker(piplup, charmander);
+               PokemonCommon.AsciiArt.CharmanderArt.Name();
+               foreach (var attack in charmander.Attacks)
+               {
+                   Console.WriteLine(attack.Name);
+               }
+               Console.ReadLine();
+               isAlive = HealthPointCheck.HealthPointChecker(piplup, charmander);
 
-                Console.WriteLine("Charmander hp:" + charmander.HealthPoints);
-                BattleEngine.MakeAttack(charmander,  piplup.Attacks[1], piplup.Name);
-                Console.WriteLine("Charmander hp:" + charmander.HealthPoints);
 
-                isAlive = HealthPointCheck.HealthPointChecker(piplup, charmander);
-           }
+            }
         }
     }
 }
