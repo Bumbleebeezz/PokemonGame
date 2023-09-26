@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
+﻿
 using PokemonCommon.Enums;
 using PokemonCommon.Pokemons.Attacks;
 
@@ -16,8 +11,10 @@ namespace PokemonCommon.Pokemons
 
         private double _healthPoints = 100;
 
+        // Every pokemon starts with 0 xp
         private int _xp = 0;
 
+        // Get and change xp
         public int XP
         {
             get { return _xp;}
@@ -39,15 +36,17 @@ namespace PokemonCommon.Pokemons
             set { _name = value; }
         }
 
-        // Get and set pokemon type
+        // List of pokemon types
         private List<PokemonTypes> _types = new List<PokemonTypes>();
 
+        // Get and set pokemon type
         public List<PokemonTypes> Types
         {
             get { return _types; }
             set { _types = value; }
         }
 
+        // Every pokemon can have maximum of 4 attacks active
         public Attack[] Attacks { get;} = new Attack[4];
 
         // Name pokemon and set pokemon type
@@ -59,6 +58,7 @@ namespace PokemonCommon.Pokemons
 
         public virtual void Attack(Pokemon target) { }
 
+        // 
         public void LearnAttack(Attack attack, int attackIndex)
         {
             if (attackIndex >  3)
